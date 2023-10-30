@@ -32,6 +32,8 @@ locked_while_printing = True
 
 [history]
 
+[timelapse]
+
 [update_manager]
 refresh_interval = 168
 
@@ -47,6 +49,13 @@ origin = https://github.com/jordanruthe/KlipperScreen.git
 env = /home/pi/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
 
 [update_manager crowsnest]
 type = git_repo
@@ -68,12 +77,4 @@ managed_services =
 [announcements]
 subscriptions = 
 	octoeverywhere
-
-[update_manager Klipper-Adaptive-Meshing-Purging]
-type = git_repo
-channel = dev
-path = ~/Klipper-Adaptive-Meshing-Purging
-origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
-managed_services = klipper
-primary_branch = main
 
